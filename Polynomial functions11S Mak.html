@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polynomial Functions (2026)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://jsxgraph.org/distrib/jsxgraph.css" />
+    <script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+
+
+    <style>
+        .jxgbox { border: 1px solid #cbd5e1; width: 500px; height: 500px; max-width: 100%; margin: 0; }
+        .config-panel { background-color: #f8fafc; border: 1px solid #cbd5e1; width: 500px; max-width: 100%; border-bottom: none; }
+        .info-box { background-color: white; border: 1px solid #cbd5e1; border-top: none; width: 500px; max-width: 100%; padding: 15px; min-height: auto; }
+        .math-block { background: #f8fafc; padding: 0.6rem; border-radius: 0.25rem; margin-bottom: 0.4rem; font-size: 0.85rem; border-left: 4px solid #1e3a8a; }
+        .activity-separator { border-top: 6px solid #1e3a8a; margin: 3rem 0; width: 500px; }
+        strong { color: #1e3a8a; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body class="bg-slate-50 p-6 md:p-12 font-sans" onload="initAll()">
+    <header class="max-w-4xl mx-auto bg-white rounded-2xl p-8 mb-12 shadow-md text-center border-b-4 border-blue-900">
+        <h1 id="mainTitle" class="text-3xl md:text-5xl font-black text-blue-900 tracking-tight uppercase">Polynomial Functions</h1>
+        <p class="text-xl font-bold text-slate-500 uppercase tracking-widest mt-2">Grade 11S | 2026 Academic Session</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto flex flex-col items-center">
+        <!-- Activities 1-3 Sections (Implicitly kept from previous versions) -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-blue-800 mb-4 activity-title">Activity 1: Parabola \(f(x)=ax^2+bx+c\)</h2>
+            <div class="config-panel p-4 flex flex-wrap gap-4 items-center rounded-t-lg justify-between">
+                <div class="flex gap-2">
+                    <label class="text-xs font-bold uppercase">a: <input type="number" id="aIn" value="1" step="0.5" class="w-14 border p-1 rounded" oninput="updateAll()"></label>
+                    <label class="text-xs font-bold uppercase">b: <input type="number" id="bIn" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateAll()"></label>
+                    <label class="text-xs font-bold uppercase">c: <input type="number" id="cIn" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateAll()"></label>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="chkTangent" onchange="updateAll()">
+                    <label for="chkTangent" class="text-xs font-bold uppercase">Show Tangent</label>
+                </div>
+            </div>
+            <div id="jxgbox" class="jxgbox"></div>
+            <div id="infoBox" class="info-box rounded-b-lg"></div>
+        </section>
+
+        <div class="activity-separator"></div>
+
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-blue-800 mb-4 activity-title">Activity 2: Cubic \(f(x)=ax^3+bx^2+cx+d\)</h2>
+            <div class="config-panel p-4 flex flex-wrap gap-4 items-center rounded-t-lg justify-between">
+                <div class="flex gap-2">
+                    <label class="text-xs font-bold uppercase">a: <input type="number" id="aIn3" value="0.5" step="0.1" class="w-14 border p-1 rounded" oninput="updateCubic()"></label>
+                    <label class="text-xs font-bold uppercase">b: <input type="number" id="bIn3" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateCubic()"></label>
+                    <label class="text-xs font-bold uppercase">c: <input type="number" id="cIn3" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateCubic()"></label>
+                    <label class="text-xs font-bold uppercase">d: <input type="number" id="dIn3" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateCubic()"></label>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="chkTangent3" onchange="updateCubic()">
+                    <label for="chkTangent3" class="text-xs font-bold uppercase">Show Tangent</label>
+                </div>
+            </div>
+            <div id="jxgbox3" class="jxgbox"></div>
+            <div id="infoBox3" class="info-box rounded-b-lg"></div>
+        </section>
+
+        <div class="activity-separator"></div>
+
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-blue-800 mb-4 activity-title">Activity 3: Quartic \(f(x)=ax^4+bx^3+cx^2+dx+e\)</h2>
+            <div class="config-panel p-4 flex flex-wrap gap-4 items-center rounded-t-lg justify-between">
+                <div class="flex gap-2">
+                    <label class="text-xs font-bold uppercase">a: <input type="number" id="aIn4" value="0.1" step="0.1" class="w-14 border p-1 rounded" oninput="updateQuartic()"></label>
+                    <label class="text-xs font-bold uppercase">b: <input type="number" id="bIn4" value="0" step="0.1" class="w-14 border p-1 rounded" oninput="updateQuartic()"></label>
+                    <label class="text-xs font-bold uppercase">c: <input type="number" id="cIn4" value="-1" step="0.5" class="w-14 border p-1 rounded" oninput="updateQuartic()"></label>
+                    <label class="text-xs font-bold uppercase">d: <input type="number" id="dIn4" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateQuartic()"></label>
+                    <label class="text-xs font-bold uppercase">e: <input type="number" id="eIn4" value="0" step="0.5" class="w-14 border p-1 rounded" oninput="updateQuartic()"></label>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="chkTangent4" onchange="updateQuartic()">
+                    <label for="chkTangent4" class="text-xs font-bold uppercase">Show Tangent</label>
+                </div>
+            </div>
+            <div id="jxgbox4" class="jxgbox"></div>
+            <div id="infoBox4" class="info-box rounded-b-lg"></div>
+        </section>
+
+        <div class="activity-separator"></div>
+
+        <!-- ACTIVITY 4 WITH NEW INFO BOX -->
+        <section class="mb-10">
+            <h2 class="text-xl font-bold text-blue-800 mb-4">Activity 4: Intersection Between Curves</h2>
+            <div class="config-panel p-4 flex flex-col gap-3 rounded-t-lg">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold text-slate-700 w-12">f(x):</span>
+                    <input type="text" id="fnF" value="x^2" class="flex-1 border p-2 rounded font-mono text-sm" oninput="updateIntersections()">
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold text-red-600 w-12">g(x):</span>
+                    <input type="text" id="fnG" value="x + 2" class="flex-1 border p-2 rounded font-mono text-sm" oninput="updateIntersections()">
+                </div>
+            </div>
+            <div id="jxgbox5" class="jxgbox"></div>
+            <div id="infoBox5" class="info-box rounded-b-lg"></div>
+        </section>
+    </main>
+
+    <script>
+        let boards = {}, elements = {};
+        const boardOpts = { boundingbox: [-10, 10, 10, -10], axis: true, showCopyright: false, defaultAxes: { x: { ticks: { insertTicks: false, ticksDistance: 1 } }, y: { ticks: { insertTicks: false, ticksDistance: 1 } } } };
+
+        function formatPoly(coeffs) {
+            let terms = [];
+            const degMax = coeffs.length - 1;
+            coeffs.forEach((c, i) => {
+                if (Math.abs(c) < 0.001) return;
+                let deg = degMax - i;
+                let val = Number.isInteger(c) ? c : parseFloat(c.toFixed(2));
+                let absVal = Math.abs(val);
+                let term = "";
+                if (deg > 0) {
+                    if (absVal === 1) term = (val < 0) ? "-" : "";
+                    else term = val;
+                    term += (deg === 1) ? "x" : "x^" + deg;
+                } else term = val;
+                if (terms.length > 0 && val > 0) term = "+ " + term;
+                else if (val < 0 && terms.length > 0) term = "- " + term.toString().replace("-", "");
+                terms.push(term);
+            });
+            return terms.length === 0 ? "0" : terms.join(" ");
+        }
+
+        function getTangentEq(x0, y0, derivCoeffs) {
+            let m = 0;
+            const deg = derivCoeffs.length - 1;
+            derivCoeffs.forEach((c, i) => m += c * Math.pow(x0, deg - i));
+            let b = y0 - m * x0;
+            return "y = " + formatPoly([m, b]);
+        }
+
+        function initAll() {
+            if(window.renderMathInElement) renderMathInElement(document.body);
+
+            boards.b1 = JXG.JSXGraph.initBoard('jxgbox', boardOpts);
+            elements.f1 = boards.b1.create('functiongraph', [x => x*x], {strokeColor: 'blue', strokeWidth: 3});
+            elements.pA1 = boards.b1.create('glider', [2, 4, elements.f1], {name: 'A', color: 'blue'});
+            elements.t1 = boards.b1.create('tangent', [elements.pA1], {visible: false, strokeColor: 'orange'});
+
+            boards.b2 = JXG.JSXGraph.initBoard('jxgbox3', boardOpts);
+            elements.f2 = boards.b2.create('functiongraph', [x => 0.5*x*x*x], {strokeColor: 'green', strokeWidth: 3});
+            elements.pA2 = boards.b2.create('glider', [1, 0.5, elements.f2], {name: 'A', color: 'green'});
+            elements.t2 = boards.b2.create('tangent', [elements.pA2], {visible: false, strokeColor: 'orange'});
+
+            boards.b3 = JXG.JSXGraph.initBoard('jxgbox4', boardOpts);
+            elements.f3 = boards.b3.create('functiongraph', [x => 0.1*x*x*x*x - x*x], {strokeColor: 'purple', strokeWidth: 3});
+            elements.pA3 = boards.b3.create('glider', [1, -0.9, elements.f3], {name: 'A', color: 'purple'});
+            elements.t3 = boards.b3.create('tangent', [elements.pA3], {visible: false, strokeColor: 'orange'});
+
+            boards.b4 = JXG.JSXGraph.initBoard('jxgbox5', boardOpts);
+            elements.curves4 = [];
+            elements.points4 = [];
+
+            updateAll(); updateCubic(); updateQuartic(); updateIntersections();
+        }
+
+        // updateAll, updateCubic, updateQuartic remain same as previous working version...
+        function updateAll() {
+            const a = parseFloat(document.getElementById('aIn').value), b = parseFloat(document.getElementById('bIn').value), c = parseFloat(document.getElementById('cIn').value);
+            elements.f1.Y = x => a*x*x + b*x + c; elements.f1.updateCurve();
+            elements.t1.setAttribute({visible: document.getElementById('chkTangent').checked});
+            boards.b1.update();
+            const xV = -b/(2*a), yV = a*xV*xV + b*xV + c;
+            const disc = b*b - 4*a*c;
+            let xInt = disc < 0 ? "None" : (disc === 0 ? (-b/(2*a)).toFixed(2) : ((-b+Math.sqrt(disc))/(2*a)).toFixed(2) + ", " + ((-b-Math.sqrt(disc))/(2*a)).toFixed(2));
+            document.getElementById('infoBox').innerHTML = `<div class="grid grid-cols-2 gap-2"><div class="math-block"><strong>Function</strong>\\(f(x)=${formatPoly([a,b,c])}\\)</div><div class="math-block"><strong>Derivative</strong>\\(f'(x)=${formatPoly([2*a,b])}\\)</div><div class="math-block"><strong>Vertex / Axis</strong>V(${xV.toFixed(2)}, ${yV.toFixed(2)}) | x=${xV.toFixed(2)}</div><div class="math-block"><strong>Intercepts</strong>X: {${xInt}} | Y: (0, ${c})</div><div class="math-block col-span-2"><strong>Tangent at A</strong>\\(${getTangentEq(elements.pA1.X(), elements.pA1.Y(), [2*a, b])}\\)</div></div>`;
+            renderMathInElement(document.getElementById('infoBox'));
+        }
+
+        function updateCubic() {
+            const a = parseFloat(document.getElementById('aIn3').value), b = parseFloat(document.getElementById('bIn3').value), c = parseFloat(document.getElementById('cIn3').value), d = parseFloat(document.getElementById('dIn3').value);
+            elements.f2.Y = x => a*x**3 + b*x**2 + c*x + d; elements.f2.updateCurve();
+            elements.t2.setAttribute({visible: document.getElementById('chkTangent3').checked});
+            boards.b2.update();
+            const xS = -b/(3*a), yS = a*xS**3 + b*xS**2 + c*xS + d;
+            document.getElementById('infoBox3').innerHTML = `<div class="grid grid-cols-2 gap-2"><div class="math-block"><strong>Function</strong>\\(f(x)=${formatPoly([a,b,c,d])}\\)</div><div class="math-block"><strong>Derivative</strong>\\(f'(x)=${formatPoly([3*a,2*b,c])}\\)</div><div class="math-block"><strong>Center of Symmetry</strong>S(${xS.toFixed(2)}, ${yS.toFixed(2)})</div><div class="math-block"><strong>Y-Intercept</strong>(0, ${d})</div><div class="math-block col-span-2"><strong>Tangent at A</strong>\\(${getTangentEq(elements.pA2.X(), elements.pA2.Y(), [3*a, 2*b, c])}\\)</div></div>`;
+            renderMathInElement(document.getElementById('infoBox3'));
+        }
+
+        function updateQuartic() {
+            const a = parseFloat(document.getElementById('aIn4').value), b = parseFloat(document.getElementById('bIn4').value), c = parseFloat(document.getElementById('cIn4').value), d = parseFloat(document.getElementById('dIn4').value), e = parseFloat(document.getElementById('eIn4').value);
+            elements.f3.Y = x => a*x**4 + b*x**3 + c*x**2 + d*x + e; elements.f3.updateCurve();
+            elements.t3.setAttribute({visible: document.getElementById('chkTangent4').checked});
+            boards.b3.update();
+            document.getElementById('infoBox4').innerHTML = `<div class="grid grid-cols-2 gap-2"><div class="math-block"><strong>Function</strong>\\(f(x)=${formatPoly([a,b,c,d,e])}\\)</div><div class="math-block"><strong>Derivative</strong>\\(f'(x)=${formatPoly([4*a,3*b,2*c,d])}\\)</div><div class="math-block"><strong>Y-Intercept</strong>(0, ${e})</div><div class="math-block col-span-2"><strong>Tangent at A</strong>\\(${getTangentEq(elements.pA3.X(), elements.pA3.Y(), [4*a, 3*b, 2*c, d])}\\)</div></div>`;
+            renderMathInElement(document.getElementById('infoBox4'));
+        }
+
+ /**
+ * Finds a single root of a function h(x) within a given interval [a, b] using the bisection method.
+ * Assumes h(a) and h(b) have opposite signs (Intermediate Value Theorem).
+ * @param {Function} h - The function to find the root of (f(x) - g(x)).
+ * @param {number} a - The start of the interval.
+ * @param {number} b - The end of the interval.
+ * @param {number} tolerance - The desired precision.
+ * @param {number} maxIterations - Maximum iterations to prevent infinite loops.
+ * @returns {number|null} The approximate x-coordinate of the root, or null if not found.
+ */
+function findRootInInterval(h, a, b, tolerance = 1e-6, maxIterations = 100) {
+    let fa = h(a);
+    let fb = h(b);
+
+    if (fa * fb >= 0) {
+        // No guaranteed root in this interval
+        return null;
+    }
+
+    for (let i = 0; i < maxIterations; i++) {
+        let c = (a + b) / 2; // Midpoint
+        let fc = h(c);
+
+        if (Math.abs(b - a) < tolerance || fc === 0) {
+            return c; // Root found
+        }
+
+        if (fc * fa < 0) {
+            b = c;
+            fb = fc;
+        } else {
+            a = c;
+            fa = fc;
+        }
+    }
+    return (a + b) / 2; // Best approximation after max iterations
+}
+
+/**
+ * Scans a range to find multiple potential root intervals and solves them.
+ * This is a heuristic approach to find multiple roots across the graph display.
+ */
+function findRootsOfH(h) {
+    const xMin = -10, xMax = 10;
+    const step = 0.1; // Decreased step size for better accuracy
+    const potentialRootsX = [];
+
+    // Scan for sign changes with a finer step
+    for (let x = xMin; x < xMax; x += step) {
+        const hx = h(x);
+        const hxNext = h(x + step);
+
+        if (hx * hxNext < 0) {
+            // Found a sign change interval [x, x + step]
+            const root = findRootInInterval(h, x, x + step);
+            if (root !== null) {
+                // Ensure the root is within the main range
+                if (root >= xMin && root <= xMax) {
+                    potentialRootsX.push(root);
+                }
+            }
+        }
+        // Also check if function value is very close to zero at the exact step point
+        if (Math.abs(hxNext) < 1e-6) {
+             potentialRootsX.push(x + step);
+        }
+    }
+    // Filter for unique roots if the same root is found multiple times due to step size
+    return [...new Set(potentialRootsX.map(r => r.toFixed(4)))].map(Number);
+}
+
+
+function updateIntersections() {
+    const fStr = document.getElementById('fnF').value;
+    const gStr = document.getElementById('fnG').value;
+
+    // Clear previous elements from board
+    if (elements.fGraph) boards.b4.removeObject(elements.fGraph);
+    if (elements.gGraph) boards.b4.removeObject(elements.gGraph);
+    // Clear old intersection points visually
+    if (elements.points4) {
+        elements.points4.forEach(p => boards.b4.removeObject(p));
+        elements.points4 = [];
+    }
+
+    try {
+        const fComp = math.compile(fStr);
+        const gComp = math.compile(gStr);
+        elements.fGraph = boards.b4.create('functiongraph', [x => fComp.evaluate({x}), -10, 10], {strokeColor: '#1e3a8a', strokeWidth: 3});
+        elements.gGraph = boards.b4.create('functiongraph', [x => gComp.evaluate({x}), -10, 10], {strokeColor: '#dc2626', strokeWidth: 3});
+
+        // Define the difference function h(x) = f(x) - g(x)
+        const hComp = math.compile(`(${fStr}) - (${gStr})`);
+        const h = x => hComp.evaluate({x});
+
+        // Call numerical solver to find roots of h(x)
+        const xIntersections = findRootsOfH(h);
+
+        let intersectionPoints = [];
+        xIntersections.forEach(x => {
+                const y = fComp.evaluate({x});
+                intersectionPoints.push({x: x, y: y});
+                // Add points to the graph visually
+                elements.points4.push(boards.b4.create('point', [x, y], {
+                    name: `(${x.toFixed(2)}, ${y.toFixed(2)})`, // This sets the name
+                    withLabel: false,                           // This hides the label text
+                    color: 'red'
+                }));
+        });
+
+        boards.b4.update();
+
+        // Update the info box with functions and points
+        const pointsHtml = intersectionPoints.length > 0 ? intersectionPoints.map(p => `(${p.x.toFixed(2)}, ${p.y.toFixed(2)})`).join(', ') : "None found in range";
+
+        document.getElementById('infoBox5').innerHTML = `<div class="grid grid-cols-1 gap-2">
+        <div class="math-block" style="color: blue;">
+        <strong style="text-transform: none !important;">Function f(x)</strong> \\(f(x)=${fStr}\\)
+        </div>
+        <div class="math-block" style="color: red;">
+        <strong style="text-transform: none !important;">Function g(x)</strong> \\(g(x)=${gStr}\\)
+        </div>
+        <div class="math-block"><strong>Intersection Points</strong>${pointsHtml}</div>
+        </div>`;
+        renderMathInElement(document.getElementById('infoBox5'));
+
+    } catch (e) {
+        // Error handling code
+        console.error("Error plotting functions:", e);
+        document.getElementById('infoBox5').innerHTML = `<div class="text-red-500 font-bold uppercase text-xs">Error: Check Equation Syntax</div>`;
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -131,9 +131,53 @@
                 margin-bottom: 20px;
             }
         }
+
+    /* News Ribbon Container */
+.news-ribbon {
+    width: 100%;
+    background: #1e293b;
+    color: #ffffff;
+    overflow: hidden; /* Essential: Hides text when it leaves the screen */
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Scrolling Text Wrapper */
+.ribbon-content {
+    display: inline-block;
+    padding-left: 100%; /* Forces the start point to the far right */
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Animation Keyframes */
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pause on hover */
+.news-ribbon:hover .ribbon-content {
+    animation-play-state: paused;
+}
+
+/* Adjust main container to make room for fixed ribbon */
+body {
+    padding-top: 60px !important;
+}
+
     </style>
 </head>
 <body>
+    <div class="news-ribbon">
+    <div class="ribbon-content">
+        📢 <strong>LATEST UPDATES:</strong>•&nbsp;&nbsp;Grade 11S Polynomial functions with 4 interactive activities;•&nbsp;&nbsp; New Mathematics Resources uploaded every week; •&nbsp;&nbsp; Welcome to the 2025-2026 Academic Year! &nbsp;&nbsp;•&nbsp;&nbsp; Contact Coordinator for Curriculum inquiries.
+    </div>
+</div>
 
     <div class="container">
         <header>
