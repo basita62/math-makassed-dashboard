@@ -27,36 +27,46 @@
             margin: 0 auto;
         }
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Keeps text centered */
-            position: relative; /* Allows logo to be positioned relative to header */
-            margin-bottom: 50px;
-            min-height: 100px;
-        }
+header {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default (mobile first) */
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+    gap: 20px; /* Space between logo and text */
+}
 
-        .header-logo {
-            position: absolute;
-            left: 0;
-            width: 250px;
-            height: auto; /* Maintains aspect ratio */
-            display: block; /* Removes extra bottom space */
-            object-fit: scale-down;
-            border-radius: 8px; /* Optional: slightly rounded corners */
-            background-color: #e2e8f0; /* Placeholder color while loading */
-        }
+.header-logo {
+    width: 100%;
+    max-width: 250px; /* Limits size on desktop */
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
 
-        .header-text {
-            text-align: center;
-            margin-left: 250px;
-        }
+.header-text {
+    margin-left: 0; /* REMOVE the 250px margin */
+}
 
-        header h1 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin: 0 0 10px 0;
-        }
+header h1 {
+    font-size: 1.5rem; /* Slightly smaller for mobile */
+    color: var(--primary);
+    margin: 5px 0;
+}
+
+/* Desktop Layout: Side-by-side */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Horizontal on desktop */
+        justify-content: center;
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
 
         header p {
             color: var(--secondary);
@@ -151,7 +161,7 @@
 .ribbon-content {
     display: inline-block;
     padding-left: 100%; /* Forces the start point to the far right */
-    animation: scroll-left 90s linear infinite;
+    animation: scroll-left 110s linear infinite;
 }
 
 /* Animation Keyframes */
@@ -175,7 +185,7 @@ body {
 <body>
     <div class="news-ribbon">
     <div class="ribbon-content">
-        📢 <strong>LATEST UPDATES:</strong>•&nbsp;&nbsp; Grade 12GLS: Solved Problems (Exam style) Logarithmic functions •&nbsp;&nbsp; Grade 12GLS: Solved Problems (Exam style) Exponential functions •&nbsp;&nbsp; Grade 12GLS: Solved Problems (Exam style) Lines and Planes •&nbsp;&nbsp; Grade 11SE: Solved Problems (Exam style) Rational Functions •&nbsp;&nbsp; Grade 12SE: Statistics 2 Variables Dynamic activities •&nbsp;&nbsp; Grade 10: Statistical Variables Dynamic Activities + Class Statistical Report (SIS style) for teachers and students •&nbsp;&nbsp; Grade 11S: Trigonometric Equations •&nbsp;&nbsp; Grade 10: Trigonometric Lines •&nbsp;&nbsp; Grade 7: Congruent Triangles •&nbsp;&nbsp; Grade 11: Rational functions •&nbsp;&nbsp; Grade9: Trigonometry in the right triangle •&nbsp;&nbsp; Grade7: Primes - GCD and LCM •&nbsp;&nbsp;  Grade 11S Vectors and Systems in space. •&nbsp;&nbsp; Grade 12GLS Space Geometry:&nbsp; Interactive problems : Lines and Planes Parts 1 and 2 •&nbsp;&nbsp; Grade 8 Interactive Geometry Problems Parallelograms and Special Parallelograms •&nbsp;&nbsp; Grade 12 Counting and Combinations •&nbsp;&nbsp; Grade 12GS, 12LS and 12SE Chapter Summary and Rules •&nbsp;&nbsp; Grade 11S,11SE Polynomial functions with 4 interactive activities;•&nbsp;&nbsp; New Mathematics Resources uploaded every week; •&nbsp;&nbsp; Welcome to the 2025-2026 Academic Year! &nbsp;&nbsp;•&nbsp;&nbsp; Contact Coordinator for Curriculum inquiries.
+        📢 <strong>LATEST UPDATES:</strong>•&nbsp;&nbsp; Grade 12GLS: G11: Solved problems (Exam style) Rational Functions •&nbsp;&nbsp; Grade 11S: Solved Problems (Exam style) Vectors and systems in space •&nbsp;&nbsp; Grade 12GLS: Solved Problems (Exam style) Logarithmic functions •&nbsp;&nbsp; Grade 12GLS: Solved Problems (Exam style) Exponential functions •&nbsp;&nbsp; Grade 12GLS: Solved Problems (Exam style) Lines and Planes •&nbsp;&nbsp; Grade 11SE: Solved Problems (Exam style) Rational Functions •&nbsp;&nbsp; Grade 12SE: Statistics 2 Variables Dynamic activities •&nbsp;&nbsp; Grade 10: Statistical Variables Dynamic Activities + Class Statistical Report (SIS style) for teachers and students •&nbsp;&nbsp; Grade 11S: Trigonometric Equations •&nbsp;&nbsp; Grade 10: Trigonometric Lines •&nbsp;&nbsp; Grade 7: Congruent Triangles •&nbsp;&nbsp; Grade 11: Rational functions •&nbsp;&nbsp; Grade9: Trigonometry in the right triangle •&nbsp;&nbsp; Grade7: Primes - GCD and LCM •&nbsp;&nbsp;  Grade 11S Vectors and Systems in space. •&nbsp;&nbsp; Grade 12GLS Space Geometry:&nbsp; Interactive problems : Lines and Planes Parts 1 and 2 •&nbsp;&nbsp; Grade 8 Interactive Geometry Problems Parallelograms and Special Parallelograms •&nbsp;&nbsp; Grade 12 Counting and Combinations •&nbsp;&nbsp; Grade 12GS, 12LS and 12SE Chapter Summary and Rules •&nbsp;&nbsp; Grade 11S,11SE Polynomial functions with 4 interactive activities;•&nbsp;&nbsp; New Mathematics Resources uploaded every week; •&nbsp;&nbsp; Welcome to the 2025-2026 Academic Year! &nbsp;&nbsp;•&nbsp;&nbsp; Contact Coordinator for Curriculum inquiries.
     </div>
 </div>
 
