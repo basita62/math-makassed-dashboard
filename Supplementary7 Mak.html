@@ -103,26 +103,6 @@
         h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; color: #1e40af; }
         ul.list-disc li { margin-left: 1.5rem; margin-bottom: 0.5rem; }
 
-        /* Table Styling */
-        .math-table {
-            /* Remove 'width: 100%' here */
-            border-collapse: collapse;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            margin-left: auto;   /* Centers the table if it's narrower than the page */
-            margin-right: auto;
-            display: inline-table; /* Allows table to fit content width */
-        }
-        .math-table th, .math-table td {
-            border: 1px solid #e2e8f0;
-            padding: 0.5rem 1rem;
-            text-align: center;
-            vertical-align: middle;
-        }
-        .math-table th {
-            background-color: #f1f5f9;
-            font-weight: bold;
-        }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
@@ -141,8 +121,10 @@
     <nav>
         <h2>Mathematics Topics</h2>
         <ul id="sidebar-list">
-            <li onclick="showChapter('ch1')" class="active">Integers</li>
-            <li onclick="showChapter('ch3')">Fractions</li>
+        <li onclick="showChapter('ch1')" class="active">Integers</li>
+        <li onclick="showChapter('ch3')">Equations</li>
+        <li onclick="showChapter('ch4')">Word Problems</li>
+
         </ul>
     </nav>
 
@@ -154,12 +136,11 @@
         <div id="logo1" style="display: flex; justify-content: center; align-items: center;">
         </div>
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h1 id="mainTitle" class="text-3xl md:text-5xl font-black text-blue-900 tracking-tight uppercase">Integers</h1>
-        <h3 class="text-xl font-semibold mt-4 mb-2 text-blue-800">Supplementary Exercises</h3>
-       <p class="text-xl font-bold text-slate-500 uppercase tracking-widest mt-2">Grade 7 | 2025-2026 Academic Session</p>
+        <p class="text-xl font-bold text-slate-500 uppercase tracking-widest mt-2">Grade 7 | 2025-2026 Academic Session</p>
         <div class="mt-6 inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full font-semibold">Document by Mathematics Department General Coordinator</div>
+        <h1 class="text-4xl font-black text-[#1e3a8a] tracking-tight uppercase" style="padding-top:20px;">Integers</h1>
         </div>
-            <br>
+        <br>
 
 <h4 class="text-lg font-semibold mb-2">I. Perform the following operations:</h4>
 <ul class="list-none ml-5 space-y-2">
@@ -390,6 +371,708 @@
 </div>
 
 </div>
+
+
+<!-- Equations Chapter Content -->
+<div id="ch3" class="content-card">
+      <div id="logo2" style="display: flex; justify-content: center; align-items: center;">
+      </div>
+    <!-- SECTION 1 CARD -->
+
+     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p class="text-xl font-bold text-slate-500 uppercase tracking-widest mt-2">Grade 7 | 2025-2026 Academic Session</p>
+        <div class="mt-6 inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full font-semibold">Document by Mathematics Department General Coordinator</div>
+        </div>
+        <br>
+
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-black text-[#1e3a8a] tracking-tight uppercase">EQUATIONS</h1>
+
+            <h3 class="text-lg font-semibold mt-2 text-blue-700">Section 1: Basic Equations</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 px-4 md:px-10">
+            <ul class="space-y-3 text-gray-700 font-medium">
+                <li>1) $x + 10 = 15$</li>
+                <li>2) $3 + a = 7$</li>
+                <li>3) $10 = b - 5$</li>
+                <li>4) $0 = t - 16$</li>
+                <li>5) $p + 10 = 10$</li>
+                <li>6) $y - 10 = 0$</li>
+                <li>7) $x + 5 = 3$</li>
+                <li>8) $a + 2 = -3$</li>
+                <li>9) $r - 4 = -4$</li>
+                <li>10) $u - 0.25 = -1$</li>
+                <li>11) $-0.5 = c + 1.5$</li>
+                <li>12) $n - \frac{1}{2} = \frac{1}{2}$</li>
+                <li>13) $x + 3 = \frac{9}{2}$</li>
+            </ul>
+            <ul class="space-y-3 text-gray-700 font-medium">
+                <li>14) $z - \frac{3}{4} = \frac{1}{4}$</li>
+                <li>15) $z + \frac{1}{2} = -\frac{7}{2}$</li>
+                <li>16) $3x = 27$</li>
+                <li>17) $4c = 44$</li>
+                <li>18) $12d = 6$</li>
+                <li>19) $5x = 0$</li>
+                <li>20) $45 = 15a$</li>
+                <li>21) $-3x = 90$</li>
+                <li>22) $-16y = -64$</li>
+                <li>23) $\frac{x}{3} = 10$</li>
+                <li>24) $-\frac{2}{5}y = -10$</li>
+                <li>25) $\frac{2}{3}e = 10$</li>
+                <li>26) $\frac{3}{4}g = -60$</li>
+            </ul>
+        </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans1').classList.toggle('hidden')" class="clickable-link">Section 1 (Click to view answers)</li>
+
+        <div id="ans1" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+            <!-- Answers list here as previously provided -->
+                           <span>1) $x = 5$</span>
+                <span>2) $a = 4$</span>
+                <span>3) $b = 15$</span>
+                <span>4) $t = 16$</span>
+                <span>5) $p = 0$</span>
+                <span>6) $y = 10$</span>
+                <span>7) $x = -2$</span>
+                <span>8) $a = -5$</span>
+                <span>9) $r = 0$</span>
+                <span>10) $u = -0.75$</span>
+                <span>11) $c = -2$</span>
+                <span>12) $n = 1$</span>
+                <span>13) $x = 1.5$</span>
+                <span>14) $z = 1$</span>
+                <span>15) $z = -4$</span>
+                <span>16) $x = 9$</span>
+                <span>17) $c = 11$</span>
+                <span>18) $d = 0.5$</span>
+                <span>19) $x = 0$</span>
+                <span>20) $a = 3$</span>
+                <span>21) $x = -30$</span>
+                <span>22) $y = 4$</span>
+                <span>23) $x = 30$</span>
+                <span>24) $y = 25$</span>
+                <span>25) $e = 15$</span>
+                <span>26) $g = -80$</span>
+        </div>
+
+
+    <!-- SECTION 2 -->
+    <div class="text-center mt-16 mb-10">
+        <h3 class="text-lg font-semibold mt-2 text-blue-700">Section 2: Two-Step Equations</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 px-4 md:px-10">
+        <ul class="space-y-3 text-gray-700 font-medium">
+            <li>1) $3x + 1 = 22$</li>
+            <li>2) $2x - 1 = 5$</li>
+            <li>3) $6a - 3 = 3$</li>
+            <li>4) $2x + 1 = 17$</li>
+            <li>5) $8x - 64 = 0$</li>
+            <li>6) $-3x + 1 = -2$</li>
+            <li>7) $1 - 2x = -7$</li>
+            <li>8) $3b + 2 = 5$</li>
+        </ul>
+        <ul class="space-y-3 text-gray-700 font-medium">
+            <li>9) $2x - 10 = 0$</li>
+            <li>10) $4x - 3 = 9$</li>
+            <li>11) $-0.5x - 0.5 = 0.5$</li>
+            <li>12) $-12x + 15 = 3$</li>
+            <li>13) $-10x - 5 = 25$</li>
+            <li>14) $2.5x + 0.2 = -4.8$</li>
+            <li>15) $-12x + 16 = -44$</li>
+            <li>16) $-10 = -15 - 5x$</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans2').classList.toggle('hidden')" class="clickable-link">Section 2 (Click to view answers)</li>
+
+
+    <div id="ans2" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $x = 7$</span>
+        <span>2) $x = 3$</span>
+        <span>3) $a = 1$</span>
+        <span>4) $x = 8$</span>
+        <span>5) $x = 8$</span>
+        <span>6) $x = 1$</span>
+        <span>7) $x = 4$</span>
+        <span>8) $b = 1$</span>
+        <span>9) $x = 5$</span>
+        <span>10) $x = 3$</span>
+        <span>11) $x = -2$</span>
+        <span>12) $x = 1$</span>
+        <span>13) $x = -3$</span>
+        <span>14) $x = -2$</span>
+        <span>15) $x = 5$</span>
+        <span>16) $x = -1$</span>
+    </div>
+
+    <!-- SECTION 3 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 3: Equations with Fractions</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 px-4 md:px-10">
+        <ul class="space-y-3 text-gray-700 font-medium">
+            <li>1) $\frac{x}{2} + 3 = 11$</li>
+            <li>2) $\frac{1}{4}x + \frac{3}{4} = -1$</li>
+            <li>3) $\frac{1}{2}x - \frac{1}{6} = -\frac{1}{3}$</li>
+            <li>4) $-\frac{2}{3}x + \frac{1}{2} = -\frac{5}{6}$</li>
+            <li>5) $-5x + \frac{2}{3} = -1$</li>
+            <li>6) $-\frac{1}{5}x + 8 = 4$</li>
+            <li>7) $x - \frac{11}{2} = 0$</li>
+        </ul>
+        <ul class="space-y-3 text-gray-700 font-medium">
+            <li>8) $\frac{x}{3} + 8 = 24$</li>
+            <li>9) $x - \frac{3}{4} = \frac{1}{4}$</li>
+            <li>10) $\frac{x}{2} + 3 = 11$</li>
+            <li>11) $\frac{2}{3}x + \frac{1}{3} = 1$</li>
+            <li>12) $\frac{1}{8}x - \frac{3}{4} = -1$</li>
+            <li>13) $\frac{x + 4}{2} = 12$</li>
+            <li>14) $\frac{m + 1}{2} = 3$</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans3').classList.toggle('hidden')" class="clickable-link">Section 3 (Click to view answers)</li>
+
+    <div id="ans3" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $x = 16$</span>
+        <span>2) $x = -7$</span>
+        <span>3) $x = -\frac{1}{3}$</span>
+        <span>4) $x = 2$</span>
+        <span>5) $x = \frac{1}{3}$</span>
+        <span>6) $x = 20$</span>
+        <span>7) $x = 5.5$</span>
+        <span>8) $x = 48$</span>
+        <span>9) $x = 1$</span>
+        <span>10) $x = 16$</span>
+        <span>11) $x = 1$</span>
+        <span>12) $x = -2$</span>
+        <span>13) $x = 20$</span>
+        <span>14) $m = 5$</span>
+    </div>
+
+    <!-- SECTION 4 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 4: Equations with Brackets</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 px-4 md:px-10">
+        <ul class="space-y-3 text-gray-700 font-medium">
+            <li>1) $-2x + 12 = 2x + 24$</li>
+            <li>2) $10 - 15x = -10 + 15x$</li>
+            <li>3) $-0.5x - 0.2 = 0.5x - 0.2$</li>
+            <li>4) $17 - 10x = 8 - 13x$</li>
+            <li>5) $5(x - 12) = -60$</li>
+            <li>6) $4(x + 20) = -4(x + 20)$</li>
+        </ul>
+        <ul class="space-y-3 text-gray-700 font-medium">
+            <li>7) $2(x + 3) - (x + 5) = 0$</li>
+            <li>8) $5(2x + 1) - 4(2x + 3) = 3$</li>
+            <li>9) $2(x - 3) - 5x = 3(x - 2) + 5x$</li>
+            <li>10) $2(x - 1) - (2 - x) = 3(x + 2) - 10$</li>
+            <li>11) $2(3x - 1) + 2x = 4(2x + 1)$</li>
+            <li>12) $-10(-2.5x + 1.2) + 0.5(20x - 6) = 0$</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans4').classList.toggle('hidden')" class="clickable-link">Section 4 (Click to view answers)</li>
+
+    <div id="ans4" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $x = -3$</span>
+        <span>2) $x = \frac{2}{3}$</span>
+        <span>3) $x = 0$</span>
+        <span>4) $x = -3$</span>
+        <span>5) $x = 0$</span>
+        <span>6) $x = -20$</span>
+        <span>7) $x = -1$</span>
+        <span>8) $x = 5$</span>
+        <span>9) $x = 0$</span>
+        <span>10) Infinite Sol.</span>
+        <span>11) No Solution</span>
+        <span>12) $x = \frac{3}{7}$</span>
+    </div>
+
+    <!-- SECTION 5 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 5: Complex Fractional Equations</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 px-4 md:px-10">
+        <ul class="space-y-4 text-gray-700 font-medium">
+            <li>1) $\frac{3x - 1}{2} = \frac{4x + 1}{3}$</li>
+            <li>2) $\frac{x - 2}{5} = \frac{x + 2}{3}$</li>
+            <li>3) $\frac{x - 4}{12} = \frac{x + 5}{15}$</li>
+            <li>4) $\frac{x - 2}{5} - \frac{2x + 3}{2} = 0$</li>
+            <li>5) $\frac{x - 1}{3} + \frac{x + 1}{2} = 1$</li>
+            <li>6) $\frac{5x - 1}{4} - \frac{3x + 1}{2} = 1$</li>
+            <li>7) $\frac{x}{3} - \frac{1}{4} = \frac{x}{2} + \frac{1}{6}$</li>
+            <li>8) $\frac{2x}{3} - \frac{1}{2} = \frac{3x}{2} - \frac{1}{3}$</li>
+            <li>9) $\frac{3}{4}(4x - 8) - \frac{1}{3}(6x + 3) = -7$</li>
+        </ul>
+        <ul class="space-y-4 text-gray-700 font-medium">
+            <li>10) $4(x - 2) - 2(x + 1) = 4\left(\frac{x}{2} + 1\right)$</li>
+            <li>11) $3\left(x + \frac{1}{3}\right) + 2\left(x - \frac{1}{2}\right) = 0$</li>
+            <li>12) $10 - 4\left(x + \frac{1}{2}\right) = 3x - 2\left(x - \frac{1}{2}\right)$</li>
+            <li>13) $\frac{1}{2}\left(\frac{2}{3} - \frac{x - 1}{2}\right) = \frac{2}{3}\left(\frac{1}{2} - \frac{x - 1}{3}\right)$</li>
+            <li>14) $\frac{2}{3}(x + 1) = \frac{3}{4}(x - 1) + 1$</li>
+            <li>15) $7\left(x + \frac{1}{2}\right) - 3\left(2x - \frac{1}{2}\right) = 0$</li>
+            <li>16) $x - \frac{x - 13}{4} + 2(x - 3) = 0$</li>
+            <li>17) $\frac{1}{2}(2x + 1) - 3\left(x + \frac{1}{2}\right) = 0$</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans6').classList.toggle('hidden')" class="clickable-link">Section 5 (Click to view answers)</li>
+
+    <div id="ans6" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $x = 5$</span>
+        <span>2) $x = -8$</span>
+        <span>3) $x = 40$</span>
+        <span>4) $x = -\frac{19}{8}$</span>
+        <span>5) $x = 1$</span>
+        <span>6) $x = -7$</span>
+        <span>7) $x = -\frac{5}{2}$</span>
+        <span>8) $x = -\frac{1}{5}$</span>
+        <span>9) $x = 0$</span>
+        <span>10) No Solution</span>
+        <span>11) $x = 0$</span>
+        <span>12) $x = \frac{7}{5}$</span>
+        <span>13) $x = 1$</span>
+        <span>14) $x = 5$</span>
+        <span>15) $x = -5$</span>
+        <span>16) $x = 1$</span>
+        <span>17) $x = -\frac{1}{2}$</span>
+    </div>
+
+    <!-- SECTION 6 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 6: Multi-Step Fractional Equations</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 px-4 md:px-10">
+        <ul class="space-y-6 text-gray-700 font-medium text-sm">
+            <li>1) $\frac{x-3}{4} - \frac{2(x+5)}{3} = \frac{x}{6} + \frac{1}{2}$</li>
+            <li>2) $\frac{2x-3}{5} - \frac{3x-2}{4} = 1 - \frac{x}{6}$</li>
+            <li>3) $\frac{2x-3}{4} - \frac{2(3x-1)}{3} = 1 - \frac{3x}{2}$</li>
+            <li>4) $\frac{4(x+2)}{3} - \frac{6(x-7)}{7} = 12$</li>
+            <li>5) $\frac{x-3}{8} - \frac{3(x-2)}{4} = 1 - \frac{x-1}{8}$</li>
+            <li>6) $\frac{x+2}{2} + \frac{x+3}{3} = \frac{x-2}{2} - \frac{x-3}{3}$</li>
+            <li>7) $\frac{1}{2} \left( \frac{x}{4} - \frac{x+1}{6} \right) = \frac{x-1}{3}$</li>
+        </ul>
+        <ul class="space-y-6 text-gray-700 font-medium text-sm">
+            <li>8) $\frac{3-x}{10} - \frac{4-3x}{5} = 1 - \frac{x+1}{2}$</li>
+            <li>9) $\frac{2x+3}{5} - \frac{3x-4}{4} = 1 - \frac{x}{3}$</li>
+            <li>10) $2 \left( x - \frac{x+2}{3} \right) + \frac{x+3}{4} = 4 \left( 1 - \frac{x+4}{5} \right)$</li>
+            <li>11) $\frac{2(x-1)}{5} + \frac{15}{2} \left( 1 - \frac{x}{3} \right) + \frac{19}{10} = \frac{9}{5} \left( \frac{x}{6} - \frac{1}{3} \right)$</li>
+            <li>12) $\frac{x+5}{2} - \frac{3(2x-3)}{4} = \frac{25}{4} + \frac{2x+1}{2}$</li>
+            <li>13) $\frac{5x}{7} - \frac{4}{5} \left( x - \frac{3}{4} \right) - \frac{2}{21} \left( x + \frac{7}{2} \right) + 1 = 0$</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans11').classList.toggle('hidden')" class="clickable-link">Section 6 (Click to view answers)</li>
+
+    <div id="ans11" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $x = -7$</span>
+        <span>2) $x = -13$</span>
+        <span>3) $x = 2.5$</span>
+        <span>4) $x = 7$</span>
+        <span>5) $x = -1$</span>
+        <span>6) $x = -5$</span>
+        <span>7) $x = 0.8$</span>
+        <span>8) $x = 1$</span>
+        <span>9) $x = -3$</span>
+        <span>10) $x = 1$</span>
+        <span>11) $x = 3$</span>
+        <span>12) $x = -0.5$</span>
+        <span>13) $x = 7$</span>
+    </div>
+
+    <!-- SECTION 7 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 7: Literal Equations</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 px-4 md:px-10">
+        <ul class="space-y-4 text-gray-700 font-medium">
+            <li>1) $x + 2a = 3x - 4a$</li>
+            <li>2) $2x + 4a = 2b$</li>
+            <li>3) $4(x - 3a) - 3(x - 2a) = a$</li>
+            <li>4) $ax + 2b = 2ax - 3b, \quad a \neq 0$</li>
+            <li>5) $ax + b = bx + a, \quad a \neq b$</li>
+        </ul>
+        <ul class="space-y-4 text-gray-700 font-medium">
+            <li>6) $a(x + 1) + 2a(x - 1) = 0, \quad a \neq 0$</li>
+            <li>7) $\frac{x + a}{2} = \frac{x - a}{3}$</li>
+            <li>8) $\frac{x}{3} - \frac{a}{2} = \frac{x - 2a}{6}$</li>
+            <li>9) $\frac{x - 1}{5a} + \frac{x + 2}{3a} = 1, \quad a \neq 0$</li>
+            <li>10) $\frac{1 - ax}{2} - \frac{1 + ax}{3} = \frac{1}{6}, \quad a \neq 0$</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans9').classList.toggle('hidden')" class="clickable-link">Section 7 (Click to view answers)</li>
+
+    <div id="ans9" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $x = 3a$</span>
+        <span>2) $x = b - 2a$</span>
+        <span>3) $x = 7a$</span>
+        <span>4) $x = \frac{5b}{a}$</span>
+        <span>5) $x = 1$</span>
+        <span>6) $x = \frac{1}{3}$</span>
+        <span>7) $x = -5a$</span>
+        <span>8) $x = a$</span>
+        <span>9) $x = \frac{15a - 7}{8}$</span>
+        <span>10) $x = 0$</span>
+    </div>
+
+    <!-- SECTION 8 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 8: Isolating Variables in Formulas</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 px-4 md:px-10">
+        <ul class="space-y-6 text-gray-700 font-medium">
+            <li>1) Solve $s = 2\pi rh$ for $h$.</li>
+            <li>2) Solve $s = 2\pi rh + 2\pi r^2$ for $h$.</li>
+            <li>3) Solve $A = s^2 + 2rs$ for $r$.</li>
+            <li>4) Solve $A = \frac{1}{2}h(a + b)$ for $h$.</li>
+        </ul>
+        <ul class="space-y-6 text-gray-700 font-medium">
+            <li>5) Solve $A = P(1 + rt)$ for $r$.</li>
+            <li>6) Solve $S = \frac{r}{1 - r}$ for $r$.</li>
+            <li>7) Solve $C = \frac{5}{9}(F - 32)$ for $F$.</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans10').classList.toggle('hidden')" class="clickable-link">Section 8 (Click to view answers)</li>
+
+    <div id="ans10" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <div class="space-y-2">
+            <p>1) $h = \frac{s}{2\pi r}$</p>
+            <p>2) $h = \frac{s - 2\pi r^2}{2\pi r}$</p>
+            <p>3) $r = \frac{A - s^2}{2s}$</p>
+            <p>4) $h = \frac{2A}{a + b}$</p>
+        </div>
+        <div class="space-y-2">
+            <p>5) $r = \frac{A - P}{Pt}$</p>
+            <p>6) $r = \frac{S}{1 + S}$</p>
+            <p>7) $F = \frac{9}{5}C + 32$</p>
+        </div>
+    </div>
+
+
+    </div>
+
+    <hr class="my-8 border-t border-gray-300" />
+
+
+
+<!-- Word Problems Chapter Content -->
+<div id="ch4" class="content-card">
+        <div id="logo3" style="display: flex; justify-content: center; align-items: center;">
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p class="text-xl font-bold text-slate-500 uppercase tracking-widest mt-2">Grade 7 | 2025-2026 Academic Session</p>
+        <div class="mt-6 inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full font-semibold">Document by Mathematics Department General Coordinator</div>
+        </div>
+
+    <!-- SECTION 1 CARD -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-black text-[#1e3a8a] tracking-tight uppercase" style="padding-top:20px;">Word Problems</h1>
+       </div>
+
+    <!-- SECTION 1 -->
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 1: Numbers Word Problems</h3>
+    </div>
+
+    <div>
+        <ul class="space-y-4 text-gray-700 font-medium">
+            <li>1) Find 4 consecutive whole numbers such that their sum is 302.</li>
+            <li>2) Find 3 consecutive even numbers such that their sum is 3294.</li>
+            <li>3) Find 5 consecutive odd numbers such that their sum is 555.</li>
+            <li>4) Find 3 consecutive multiples of 5 such that their sum is 675.</li>
+            <li>5) The ages of 3 brothers are consecutive multiples of 3. Find the age of each knowing that their combined ages total 108 years.</li>
+            <li>6) A man is 3 times as old as his son and 6 years older than his wife. If the sum of their ages is 99 years, how old is each?</li>
+            <li>7) The length and the width of a rectangle are consecutive even integers. If the perimeter is 172 meters, find the dimensions.</li>
+            <li>8) The length of a rectangle is $12\text{ cm}$ more than twice its width. Find the dimensions knowing its perimeter is $72\text{ cm}$.</li>
+            <li>9) The angles of a triangle are consecutive even numbers. Find the measure of each angle in degrees.</li>
+            <li>10) The angles of a triangle are consecutive multiples of 3. Find the measure of each angle in degrees.</li>
+            <li>11) The angles of a pentagon are consecutive multiples of 4. Find the measure of each angle in degrees.</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans5').classList.toggle('hidden')" class="clickable-link">Section 1 (Click to view answers)</li>
+
+    <div id="ans5" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <span>1) $74, 75, 76, 77$</span>
+        <span>2) $1096, 1098, 1100$</span>
+        <span>3) $107, 109, 111, 113, 115$</span>
+        <span>4) $220, 225, 230$</span>
+        <span>5) $33, 36, 39 \text{ years}$</span>
+        <span>6) $\text{Son: } 15, \text{ Man: } 45, \text{ Wife: } 39$</span>
+        <span>7) $42\text{m} \times 44\text{m}$</span>
+        <span>8) $8\text{cm} \times 28\text{cm}$</span>
+        <span>9) $58^\circ, 60^\circ, 62^\circ$</span>
+        <span>10) $57^\circ, 60^\circ, 63^\circ$</span>
+        <span>11) $100^\circ, 104^\circ, 108^\circ, 112^\circ, 116^\circ$</span>
+    </div>
+
+
+    <!-- SECTION 2 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 2: More Word Problems</h3>
+    </div>
+
+    <div>
+        <ul class="space-y-4 text-gray-700 font-medium text-sm">
+            <li>1) A man is 4 times as old as his son and 12 years older than his wife. If the sum of their ages is 96 years, how old is each?</li>
+            <li>2) Sarah is 3 times as old as Hani and 3 years older than Amer. If the sum of their ages is 67 years, how old is each now?</li>
+            <li>3) Mona is twice as old as her sister and $\frac{1}{3}$ as old as her mother. If the sum of their ages is 72 years, how old is she?</li>
+            <li>4) Jad is twice as old as Sami who is 3 times as old as Rami. If the sum of the ages of Jad and Rami is 12 less than 3 times Sami's age, how old is each?</li>
+            <li>5) The perimeter of a rectangle is 20 meters. The length is one meter longer than twice the width. Find the width.</li>
+            <li>6) The length of a rectangle is $4\text{ cm}$ longer than 3 times its width. Find the area of this rectangle knowing that $\frac{2}{7}$ of its perimeter is $16\text{ cm}$.</li>
+            <li>7) The width of a rectangle is $5\text{ cm}$ less than half its length. Find the dimensions of this rectangle knowing that $\frac{3}{4}$ of its perimeter is $150\text{ cm}$.</li>
+            <li>8) Find two supplementary angles such that one of them is $10^\circ$ more than $\frac{2}{3}$ of the other.</li>
+            <li>9) The angles of triangle ABC are such that: $\hat{A}$ is $10^\circ$ more than $\hat{B}$ and $40^\circ$ less than $\hat{C}$. Find the measure of each angle.</li>
+            <li>10) Find the measure, in degrees, of each angle of a triangle knowing that the largest angle is 3 times the middle and the middle itself is 2 times the smallest.</li>
+            <li>11) The angles of a quadrilateral ACBD are such that: $\hat{B}$ is twice $\hat{A}$, $\hat{C}$ is twice $\hat{B}$, and $\hat{D}$ is twice $\hat{C}$. Find the measure of each angle.</li>
+            <li>12) Find the number such that if you add 15 to it, the result is triple the original number.</li>
+            <li>13) One side of a triangle is $5\text{ cm}$ longer than the shortest side and $2\text{ cm}$ shorter than the longest side. If the perimeter is $30\text{ cm}$, find the sides.</li>
+            <li>14) A father is 30 years older than his daughter. In 5 years, he will be 4 times as old as she is then. Find their present ages.</li>
+            <li>15) The sum of three consecutive odd integers is 153. Find the integers.</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans7').classList.toggle('hidden')" class="clickable-link">Section 2 (Click to view answers)</li>
+
+    <div id="ans7" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <div class="space-y-1">
+            <p>1) Son: 12, Man: 48, Wife: 36</p>
+            <p>2) Hani: 10, Sarah: 30, Amer: 27</p>
+            <p>3) Mona: 16 (Sis: 8, Mom: 48)</p>
+            <p>4) Rami: 6, Sami: 18, Jad: 36</p>
+            <p>5) Width: 3m (Length: 7m)</p>
+            <p>6) Area: $132\text{cm}^2$ (w=6, l=22)</p>
+            <p>7) $70\text{cm} \times 30\text{cm}$</p>
+            <p>8) $78^\circ, 102^\circ$</p>
+        </div>
+        <div class="space-y-1">
+            <p>9) $\hat{A}=50^\circ, \hat{B}=40^\circ, \hat{C}=90^\circ$</p>
+            <p>10) $20^\circ, 40^\circ, 120^\circ$</p>
+            <p>11) $24^\circ, 48^\circ, 96^\circ, 192^\circ$</p>
+            <p>12) $7.5$</p>
+            <p>13) $6\text{cm}, 11\text{cm}, 13\text{cm}$</p>
+            <p>14) Daughter: 5, Father: 35</p>
+            <p>15) $49, 51, 53$</p>
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 3: Challenging Word Problems</h3>
+    </div>
+
+    <div>
+        <ul class="space-y-4 text-gray-700 font-medium text-sm">
+            <li>1) Find three consecutive numbers such that if they are divided by 10, 17 and 26 respectively, the sum of the quotients will be 10.</li>
+            <li>2) One boy has 5 times as many marbles as a second boy. If the first were to give 18 marbles to the second, each would then have the same number. How many marbles has each?</li>
+            <li>3) 10 pens and 15 pencils cost $60. If the price of one pen exceeds that of one pencil by 1 dollar, what is the price of one pen?</li>
+            <li>4) 350 tickets were sold for a concert. Students paid $5 per ticket and non-students paid $8 per ticket. If the amount of money received for the students seats was $200 less than that received for the non-students seats, how many tickets of each kind were sold?</li>
+            <li>5) Tala was paid 1264 dollars for working 152 hours. She gets 8 dollars an hour for regular hours and 12 dollars an hour for overtime hours. How many regular hours did she work?</li>
+            <li>6) 15 bags contain a total of 69 balls. If some of these bags contain 3 balls and the remaining bags contain 5 balls, how many bags of each kind are there?</li>
+            <li>7) A bag contains a number of black and white balls, there being 3 black balls for every 4 white. If two white balls are removed and replaced by two black ones, there is an equal number of each. How many balls of each color are in the bag?</li>
+            <li>8) A committee of 18 has men and women members. If half of the women on the committee were replaced by men, the number of men would be five times the number of women. How many men are at present on the committee?</li>
+            <li>9) One side of a square is increased by 4 cm and an adjacent side is decreased by 3 cm. If the area of the resulting rectangle is equal to that of the original square, what is the length of one side of the square?</li>
+            <li>10) A square pool is surrounded by a walkway 2 meters wide. Find the side of the square knowing that the area of the walkway is 112 square meters.</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans8').classList.toggle('hidden')" class="clickable-link">Section 3 (Click to view answers)</li>
+
+    <div id="ans8" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <div class="space-y-1">
+            <p>1) $50, 51, 52$</p>
+            <p>2) Boy 1: 45, Boy 2: 9</p>
+            <p>3) Pen: $3, Pencil: $2</p>
+            <p>4) Students: 200, Non-students: 150</p>
+            <p>5) 140 regular hours</p>
+        </div>
+        <div class="space-y-1">
+            <p>6) 3-ball bags: 3, 5-ball bags: 12</p>
+            <p>7) 12 Black, 16 White</p>
+            <p>8) 12 Men, 6 Women</p>
+            <p>9) $12 \text{ cm}$</p>
+            <p>10) $12 \text{ meters}$</p>
+        </div>
+    </div>
+
+
+    <!-- SECTION 4 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 4: Word Problems with fractions</h3>
+    </div>
+
+    <div>
+        <ul class="space-y-6 text-gray-700 font-medium text-sm">
+            <li>1) Find 3 consecutive multiples of 5 knowing that the sum of $\frac{1}{4}$ of the first, $\frac{1}{5}$ of the second and $\frac{1}{6}$ of the third is 15.</li>
+            <li>2) Find 3 consecutive multiples of 9 such that the sum of $\frac{2}{3}$ of the first, $\frac{4}{9}$ of the second and $\frac{7}{15}$ of the third is 55.</li>
+            <li>3) Find three consecutive odd numbers such that $\frac{3}{4}$ of the sum of the first 2 numbers exceeds $\frac{2}{3}$ of the third number by 18.</li>
+            <li>4) Find two numbers knowing that their difference is 21 and that $\frac{3}{4}$ of the smaller is equal to $\frac{2}{3}$ of the larger.</li>
+            <li>5) Find three numbers knowing that their sum is 38 and that the first is 6 less than the second and 4 more than the third.</li>
+            <li>6) Find two numbers knowing that their sum is 326 and that one of them is 16 less than twice the other.</li>
+            <li>7) Ali is $\frac{2}{3}$ as old as Rami who is $\frac{3}{4}$ as old as Jad. If the sum of their ages is 135 years, how old is each?</li>
+            <li>8) Farah is $\frac{2}{3}$ as old as Rola and Rola is $\frac{2}{3}$ as old as Sara. If the sum of their ages is 76 years, how old is each?</li>
+            <li>9) Sahar is $\frac{1}{2}$ as old as Samir and four years younger than Fadi. If the sum of their ages is 72 years, how old is each?</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans12').classList.toggle('hidden')" class="clickable-link">Section 4 (Click to view answers)</li>
+
+     <div id="ans12" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <div class="space-y-1">
+            <p>1) $20, 25, 30$</p>
+            <p>2) $27, 36, 45$</p>
+            <p>3) $23, 25, 27$</p>
+            <p>4) $168, 189$</p>
+            <p>5) $12, 18, 8$</p>
+        </div>
+        <div class="space-y-1">
+            <p>6) $114, 212$</p>
+            <p>7) Ali: 30, Rami: 45, Jad: 60</p>
+            <p>8) Farah: 16, Rola: 24, Sara: 36</p>
+            <p>9) Sahar: 17, Samir: 34, Fadi: 21</p>
+        </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 5: Mixed Word Problems & Geometry</h3>
+    </div>
+
+    <div>
+        <ul class="space-y-6 text-gray-700 font-medium text-sm">
+            <li>1) Student tickets to a play cost 2 dollars each and adult tickets cost 3 dollars each. On Monday 26 tickets were sold and 64 dollars was collected. How many student tickets were sold?</li>
+            <li>2) Sami spent 44 dollars for several pencils costing 2 dollars each and some notebooks costing 5 dollars each. He bought 8 more pencils than notebooks. How many pencils did he buy?</li>
+            <li>3) A rectangle is twice as long as it is wide. If the length is increased by $3\text{ cm}$ and the width is increased by $5\text{ cm}$, the new area will be $28\text{ cm}^2$ more than the old area. Find the original dimensions.</li>
+            <li>4) The length of a rectangle is 5 times its width. If the width is increased by $10\text{ cm}$ and the length is decreased by $25\text{ cm}$, the area remains the same. Find the original dimensions.</li>
+            <li>5) The length of a rectangle is 3 times its width. If the length is decreased by $4\text{ cm}$ and the width is doubled, the perimeter remains the same. Find the original dimensions.</li>
+            <li>6) A rectangular pool is twice as long as it is wide. A walkway half-meter wide surrounds the pool. Find the dimensions if the walkway area is $25\text{ m}^2$.</li>
+            <li>7) The length of a rectangular pool is 3 times its width. A walkway $2\text{ m}$ wide surrounds it. Find the dimensions if the walkway area is $96\text{ m}^2$.</li>
+            <li>8) A circular pool is surrounded by a walkway $2\text{ m}$ wide. Find the radius of the pool if the walkway area is $176\text{ m}^2$. (use $\pi=22/7$)</li>
+            <li>9) Sara rode out of town at $24\text{ km/hr}$. Her bike broke down, and she walked back at $6\text{ km/hr}$. If she was gone 5 hours total, how far from town did she break down?</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans13').classList.toggle('hidden')" class="clickable-link">Section 5 (Click to view answers)</li>
+
+    <div id="ans13" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <div class="space-y-1">
+            <p>1) 14 Student Tickets</p>
+            <p>2) 12 Pencils (and 4 notebooks)</p>
+            <p>3) $1\text{cm} \times 2\text{cm}$</p>
+            <p>4) $10\text{cm} \times 50\text{cm}$</p>
+            <p>5) $4\text{cm} \times 12\text{cm}$</p>
+        </div>
+        <div class="space-y-1">
+            <p>6) $8\text{m} \times 16\text{m}$</p>
+            <p>7) $5\text{m} \times 15\text{m}$</p>
+            <p>8) $Radius = 13\text{m}$</p>
+            <p>9) $24\text{ km}$ (Walk back time: 4 hours)</p>
+        </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <hr class="my-12 border-t border-gray-200" />
+
+    <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-700">Section 6: Motion & Distance Problems</h3>
+    </div>
+
+    <div>
+        <ul class="space-y-6 text-gray-700 font-medium text-sm">
+            <li>1) An airplane did a certain journey between two towns at an average speed of $500\text{ km/hr}$. On the return journey, its average speed was decreased by $100\text{ km/hr}$. If it took 45 minutes longer on the return journey, find the distance between the towns.</li>
+            <li>2) Fadi and Sami live $300\text{ km}$ apart. Fadi left his house at 8:00 a.m. and drove toward Sami's house at an average speed of $70\text{ km/hr}$. At 10:00 a.m., Sami left his house and drove toward Fadi's house. If they met at noon, find the average speed of Sami.</li>
+            <li>3) At what rate must motorist (A) travel to overtake motorist (B) who is travelling at a rate $20\text{ km/hr}$ slower, if (A) starts two hours after (B) and wishes to overtake (B) in 4 hours?</li>
+            <li>4) Two jets leave an airport at the same time and fly in opposite directions. If one jet averages $960\text{ km/hr}$ and the other averages $800\text{ km/hr}$, then in how many hours will they be $3520\text{ km}$ apart?</li>
+        </ul>
+        <ul class="space-y-6 text-gray-700 font-medium text-sm">
+            <li>5) A walker leaves a town (A) at the rate of $5\text{ km/hr}$. 45 minutes later, a cyclist leaves the same town and goes after the walker at the rate of $12.5\text{ km/hr}$. How long it will take the cyclist to overtake the walker, and at what distance from (A) do they meet?</li>
+            <li>6) A boy walks to a village and back in 50 minutes. He walks there at $3\text{ km/hr}$ and returns at $2\text{ km/hr}$. How far away is the village?</li>
+            <li>7) A boy usually cycles to school, a distance of $3\text{ km}$, at $12\text{ km/hr}$. One day he had a puncture after cycling part of the way and walked the remainder pushing his cycle at $3\text{ km/hr}$. In consequence the journey took 10 minutes longer than usual. How far from school did the puncture occur?</li>
+            <li>8) Two cars started together to race over a certain distance with average speeds of $100\text{ km/hr}$ and $96\text{ km/hr}$. If the faster car crossed the finishing line 6 minutes ahead of the other, find the time taken by the slower car.</li>
+        </ul>
+    </div>
+
+        <hr class="my-5 border-t border-gray-200" />
+
+        <li style="padding-left:20px; "onclick="document.getElementById('ans14').classList.toggle('hidden')" class="clickable-link">Section 6 (Click to view answers)</li>
+
+    <div id="ans14" class="hidden mt-6 p-6 bg-blue-50 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-blue-900">
+        <div class="space-y-1">
+            <p>1) $1500\text{ km}$</p>
+            <p>2) $10\text{ km/hr}$</p>
+            <p>3) $60\text{ km/hr}$</p>
+            <p>4) $2\text{ hours}$</p>
+        </div>
+        <div class="space-y-1">
+            <p>5) $30\text{ mins, } 6.25\text{ km}$</p>
+            <p>6) $1\text{ km}$</p>
+            <p>7) $2\frac{1}{3}\text{ km}$ from school</p>
+            <p>8) $2.5\text{ hours}$</p>
+        </div>
+    </div>
+
+    </div>
+
+    <hr class="my-8 border-t border-gray-300" />
+
     </main>
 
 
@@ -401,7 +1084,7 @@
     targetDiv.innerHTML = `<img src="${mylogo}" alt="Log Image" />`;
     const targetDiv2 = document.getElementById('logo2');
     targetDiv2.innerHTML = `<img src="${mylogo}" alt="Log Image" />`;
-        const targetDiv3 = document.getElementById('logo3');
+    const targetDiv3 = document.getElementById('logo3');
     targetDiv3.innerHTML = `<img src="${mylogo}" alt="Log Image" />`;
 
 
