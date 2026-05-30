@@ -244,7 +244,7 @@
 
     const targetDiv = document.getElementById('logo1');
     targetDiv.innerHTML = `<img src="${mylogo}" alt="Log Image" />`;
-    
+
 // =========================================================
 // CENTRAL REGISTRY ENGINE (No static lists required!)
 // =========================================================
@@ -3434,9 +3434,9 @@ QuizRegistry["Logarithmic Inequalities"].push(function(id) {
 QuizRegistry["Exponential Inequalities"].push(function(id) {
   // Variations based on negative power quadratic substitution: a*e^{-2x} + b*e^{-x} - c >= 0
   const sets = [
-    { type: 13, expr: "3e^{-2x} \\ge -4e^{-x} + 7", correct: "]-\\infty; 0]", wrong1: "[1; +\\infty[", wrong2: "[0; +\\infty[" }, // Exact problem from image
-    { type: 14, expr: "2e^{-2x} \\ge -3e^{-x} + 5", correct: "]-\\infty; 0]", wrong1: "[1; +\\infty[", wrong2: "[0; +\\infty[" }, // Variation 1
-    { type: 15, expr: "5e^{-2x} \\ge -e^{-x} + 6",  correct: "]-\\infty; 0]", wrong1: "[1; +\\infty[", wrong2: "[0; +\\infty[" }  // Variation 2
+    { type: 13, expr: "3e^{-2x} \\ge -4e^{-x} + 7", a: 3, b: 4, c: 7, correct: "]-\\infty; 0]", wrong1: "[1; +\\infty[", wrong2: "[0; +\\infty[" },
+    { type: 14, expr: "2e^{-2x} \\ge -3e^{-x} + 5", a: 2, b: 3, c: 5, correct: "]-\\infty; 0]", wrong1: "[1; +\\infty[", wrong2: "[0; +\\infty[" },
+    { type: 15, expr: "5e^{-2x} \\ge -e^{-x} + 6",  a: 5, b: 1, c: 6, correct: "]-\\infty; 0]", wrong1: "[1; +\\infty[", wrong2: "[0; +\\infty[" }
   ];
 
   const config = sets[Math.floor(Math.random() * sets.length)];
@@ -3456,18 +3456,18 @@ QuizRegistry["Exponential Inequalities"].push(function(id) {
     explanation: `To solve this exponential inequality, we transform it into a standard quadratic polynomial format using substitution:
 
 1. **Rearrange into Standard Form:** Bring all terms to one side of the inequality:
-   \\[ 3e^{-2x} + 4e^{-x} - 7 \\ge 0 \\]
+   \\[ ${config.a}e^{-2x} + ${config.b}e^{-x} - ${config.c} \\ge 0 \\]
 
 2. **Apply Substitution:** Let \\( u = e^{-x} \\). Since exponential outputs are always strictly positive, we note the domain condition \\( u > 0 \\).
    The expression updates to:
-   \\[ 3u^2 + 4u - 7 \\ge 0 \\]
+   \\[ ${config.a}u^2 + ${config.b}u - ${config.c} \\ge 0 \\]
 
-3. **Factor the Quadratic expression:** Find the roots of the corresponding equation \\( 3u^2 + 4u - 7 = 0 \\):
-   \\[ 3u^2 - 3u + 7u - 7 = 0 \\implies 3u(u - 1) + 7(u - 1) \\ge 0 \\]
-   \\[ (3u + 7)(u - 1) \\ge 0 \\]
+3. **Factor the Quadratic expression:** Find the roots of the corresponding equation \\( ${config.a}u^2 + ${config.b}u - ${config.c} = 0 \\):
+   \\[ ${config.a}u^2 - ${config.a}u + ${config.c}u - ${config.c} = 0 \\implies ${config.a}u(u - 1) + ${config.c}(u - 1) \\ge 0 \\]
+   \\[ (${config.a}u + ${config.c})(u - 1) \\ge 0 \\]
 
 4. **Analyze the Signs under the Constraint (u > 0):**
-   * The factor \\( (3u + 7) \\) is always strictly positive because \\( u > 0 \\).
+   * The factor \\( (${config.a}u + ${config.c}) \\) is always strictly positive because \\( u > 0 \\).
    * For the product to remain greater than or equal to zero, the second factor must also be non-negative:
    \\[ u - 1 \\ge 0 \\implies u \\ge 1 \\]
 
@@ -3477,6 +3477,7 @@ QuizRegistry["Exponential Inequalities"].push(function(id) {
 This creates the final lower-bounded interval range matching: \\( ]-\\infty; 0] \\).`
   };
 });
+
 
 
 QuizRegistry["Exponential Inequalities"].push(function(id) {
@@ -4327,15 +4328,16 @@ QuizRegistry["Probability"].push(function(id) {
   topic: "Probability",
   question: `If A and B are two events of the same universe such that \\( P(A) = ${config.pA} \\) and \\( P(\\overline{A} \\cap B) = ${config.pNotAndB} \\), then find: \\[ P(\\overline{A} \\cap \\overline{B}) = \\]`,
   options: {
-   a: `${choices}`,
-   b: `${choices}`,
-   c: `${choices}`,
-   d: `${choices}`
+   a: `\\( ${choices[0]} \\)`, // Fixed: added array indexes and KaTeX delimiters
+   b: `\\( ${choices[1]} \\)`,
+   c: `\\( ${choices[2]} \\)`,
+   d: `\\( ${choices[3]} \\)`
   },
   correct: letterMapping[correctIndex],
   explanation: `1. **Find Complement of A:** \\( P(\\overline{A}) = 1 - P(A) = 1 - ${config.pA} = ${(1 - config.pA).toFixed(1)} \\).\n\n2. **Partition Rule:** The sample space of \\( \\overline{A} \\) partitions neatly into items overlapping with B and items entirely separate from B: \\( P(\\overline{A}) = P(\\overline{A} \\cap B) + P(\\overline{A} \\cap \\overline{B}) \\).\n\n3. **Isolate Target Equation:** Substituting values yields \\( ${(1 - config.pA).toFixed(1)} = ${config.pNotAndB} + P(\\overline{A} \\cap \\overline{B}) \\), leaving us with exactly \\( ${config.ans} \\).`
  };
 });
+
 
 QuizRegistry["Probability"].push(function(id) {
  // Config parameter pools: { ratioA, ratioB, unionStr, ansStr, options }
@@ -4356,15 +4358,16 @@ QuizRegistry["Probability"].push(function(id) {
   topic: "Probability",
   question: `A and B are two mutually exclusive (incompatible) events of a universe \\( \\Omega \\) such that the probabilities \\( P(A) \\) and \\( P(B) \\) verify \\[ \\frac{P(A)}{${config.mA}} = \\frac{P(B)}{${config.mB}} \\] If \\( P(A \\cup B) = ${config.unionStr} \\), then \\( P(A) = \\)`,
   options: {
-   a: `\\( ${choices} \\)`,
-   b: `\\( ${choices} \\)`,
-   c: `\\( ${choices} \\)`,
-   d: `\\( ${choices} \\)`
+   a: `\\( ${choices[0]} \\)`, // Fixed: Added bracket indexing
+   b: `\\( ${choices[1]} \\)`,
+   c: `\\( ${choices[2]} \\)`,
+   d: `\\( ${choices[3]} \\)`
   },
   correct: letterMapping[correctIndex],
   explanation: `1. **Mutually Exclusive Addition Rule:** For incompatible events, \\( P(A \\cup B) = P(A) + P(B) \\).\n\n2. **Express Ratio Relationship:** From the proportion, isolate \\( P(B) \\) to find \\( P(B) = \\frac{${config.mB}}{${config.mA}}P(A) \\).\n\n3. **Substitute and Solve:** Combine them: \\( P(A \\cup B) = P(A)\\left(1 + \\frac{${config.mB}}{${config.mA}}\\right) = \\frac{${config.mA + config.mB}}{${config.mA}}P(A) \\). Substituting \\( P(A \\cup B) = ${config.unionStr} \\) yields \\( P(A) = ${config.ansStr} \\).`
  };
 });
+
 
 
 // =========================================================
