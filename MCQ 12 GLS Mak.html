@@ -183,21 +183,27 @@
  <div id="setup-screen">
  <div class="form-group">
  <label>Select Topics:</label>
- <div class="checkbox-group" id="topics-container">
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Equations" checked> Logarithmic Equations</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Inequalities" checked> Logarithmic Inequalities</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Limits" checked> Logarithmic Limits</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Domain of Definition" checked> Logarithmic Domain of Definition</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Integrals" checked> Logarithmic Integrals</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Simplifying ln and exp expressions" checked> Simplifying ln and exp expressions</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Image of Interval" checked> Image of Interval</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Equations" checked> Exponential Equations</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Inequalities" checked> Exponential Inequalities</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Limits" checked> Exponential Limits</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Integrals" checked> Exponential Integrals</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Probability" checked> Probability</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Fundamental theorem of calculus" checked> Fundamental Theorem of Calculus</label>
-                <label class="checkbox-label"><input type="checkbox" name="topics" value="Counting" checked> Counting</label>
+
+
+     <div class="checkbox-group" id="topics-container">
+      <label class="checkbox-label" style="font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 5px; justify-content: center;">
+      <input type="checkbox" id="select-all-topics" checked onchange="toggleSelectAll(this)"> Select / Deselect All
+      </label>
+
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Equations" checked onchange="updateSelectAllState()"> Logarithmic Equations</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Inequalities" checked onchange="updateSelectAllState()"> Logarithmic Inequalities</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Limits" checked onchange="updateSelectAllState()"> Logarithmic Limits</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Domain of Definition" checked onchange="updateSelectAllState()"> Logarithmic Domain of Definition</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Logarithmic Integrals" checked onchange="updateSelectAllState()"> Logarithmic Integrals</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Simplifying ln and exp expressions" checked onchange="updateSelectAllState()"> Simplifying ln and exp expressions</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Image of Interval" checked onchange="updateSelectAllState()"> Image of Interval</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Equations" checked onchange="updateSelectAllState()"> Exponential Equations</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Inequalities" checked onchange="updateSelectAllState()"> Exponential Inequalities</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Limits" checked onchange="updateSelectAllState()"> Exponential Limits</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Exponential Integrals" checked onchange="updateSelectAllState()"> Exponential Integrals</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Probability" checked onchange="updateSelectAllState()"> Probability</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Fundamental theorem of calculus" checked onchange="updateSelectAllState()"> Fundamental Theorem of Calculus</label>
+                <label class="checkbox-label"><input type="checkbox" name="topics" value="Counting" checked onchange="updateSelectAllState()"> Counting</label>
  </div>
  </div>
  <div class="form-group">
@@ -244,6 +250,20 @@
 
     const targetDiv = document.getElementById('logo1');
     targetDiv.innerHTML = `<img src="${mylogo}" alt="Log Image" />`;
+
+    // Toggles all sub-checkboxes when the master checkbox is clicked
+function toggleSelectAll(masterCheckbox) {
+  const checkboxes = document.querySelectorAll('input[name="topics"]');
+  checkboxes.forEach(cb => cb.checked = masterCheckbox.checked);
+}
+
+// Automatically updates the master checkbox if individual topics are checked/unchecked
+function updateSelectAllState() {
+  const master = document.getElementById('select-all-topics');
+  const checkboxes = document.querySelectorAll('input[name="topics"]');
+  const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+  master.checked = allChecked;
+}
 
 // =========================================================
 // CENTRAL REGISTRY ENGINE (No static lists required!)
